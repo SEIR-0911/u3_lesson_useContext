@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-//import DataContext from "../DataContext"
+import DataContext from "../DataContext"
 
-function ComponentC() {
+export default function ComponentC() {
   const { userInfo, setUserInfo } = useContext(DataContext);
   return (
     <div className="card">
@@ -14,7 +14,7 @@ function ComponentC() {
       </ul>
 
     
-        {/* <p style= {{color: userInfo.favColor}}> {userInfo.name}'s favorite movie is {userInfo.favMovie}</p> 
+        <p style= {{color: userInfo.favColor}}> {userInfo.name}'s favorite movie is {userInfo.favMovie}</p> 
         <p> and their favorite food is {userInfo.favFood} </p>
 
       
@@ -27,20 +27,44 @@ function ComponentC() {
           })
         }
       >
-        Change to Aqua
+        Change Color and Food
       </button>
       
       <button
         onClick={() =>
           setUserInfo({
             ...userInfo,
-            favColor: "pink",
+            favColor: "red",
             favMovie: "Yojimbo"
           })
         }
       >
-        Change to Pink
-      </button> */}
+        Change Color and Movie
+      </button>
+
+      <button
+        onClick={() =>
+          setUserInfo({
+            ...userInfo,
+            colorOfShirt: ""
+          })
+        }
+      >
+        Remove Sweater Code
+      </button>
+
+
+      <button
+        onClick={() =>
+          setUserInfo({
+            ...userInfo,
+            favFood: "butternut squash soup",
+            favMovie: "Unforgiven"
+          })
+        }
+      >
+        Change food and Movie
+      </button>
     </div>
   );
     }
